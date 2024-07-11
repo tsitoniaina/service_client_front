@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+let urlBack=process.env.REACT_APP_BACK_URL;
+console.log('urlBack',urlBack);
 
 const CreateUser = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-
-    let urlBack='http://localhost:8000';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
