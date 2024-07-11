@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginForm from '../Login/Login';
 import CreateUser from '../User/createUser';
 import Home from '../web/index';
+import ProtectedRoute from '../ProtectedRoute/protectedRoute';
 
 const AppRoutes = () => {
     return (
@@ -10,7 +11,7 @@ const AppRoutes = () => {
             <Routes>
                 <Route path="/login" element={<LoginForm />} />
                 <Route path="/singin" element={<CreateUser />} />
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
             </Routes>
         </Router>
     );

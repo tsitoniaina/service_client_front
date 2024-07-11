@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import CryptoJS from 'crypto-js';
 import axios from 'axios';
 
 const LoginForm = () => {
@@ -18,9 +18,11 @@ const LoginForm = () => {
                 email,
                 password
             });
-            console.log('Login successful:', response.data);
+            console.log('Login successful:', response.config.data);
             setMessage('Login successful!');
-            navigate('/home');
+            const encryptedToken = CryptoJS.AES.encrypt(response.config.data, 'your-secret-key').toString();
+            localStorage.setItem('authToken',encryptedToken);
+            navigate('/');
         } catch (error) {
             console.error('Error logging in:', error);
             setMessage('Error logging in. Please check your credentials.');
