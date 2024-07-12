@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+import love from '../../assets/images/love-removebg-preview.png'
+
 let urlBack=process.env.REACT_APP_BACK_URL;
 console.log('urlBack',urlBack);
 

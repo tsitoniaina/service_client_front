@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CryptoJS from 'crypto-js';
 import axios from 'axios';
+import love from '../../assets/images/love-removebg-preview.png'
+import "../../assets/css/style.css"
 let urlBack = process.env.REACT_APP_BACK_URL;
 console.log('urlBack',urlBack);
      
