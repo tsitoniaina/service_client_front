@@ -1,11 +1,10 @@
 import React from 'react';
-import CreateUser from './components/User/createUser';
 import AppRoutes from './components/Route/Routes';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      {/* <CreateUser /> */}
       <AppRoutes/>
     </div>
   );
