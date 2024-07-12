@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CryptoJS from 'crypto-js';
 import axios from 'axios';
-import '../../assets/css/style.css';
-import love from '../../assets/images/love-removebg-preview.png';
+let urlBack = process.env.REACT_APP_BACK_URL;
+console.log('urlBack',urlBack);
+     
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -11,7 +12,6 @@ const LoginForm = () => {
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
-    let urlBack='http://localhost:8000';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
